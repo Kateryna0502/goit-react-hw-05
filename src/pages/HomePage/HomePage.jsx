@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
-import { fetchTrendingMovies } from "../../service/filmsApi";
+import { fetchTrendingMovies } from "../../service/api.jsx";
 import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
@@ -14,6 +14,7 @@ const HomePage = () => {
       setError(null);
       try {
         const response = await fetchTrendingMovies();
+        console.log(response)
         setTrendingFilms(response.results);
       } catch (error) {
         setError(error.message);

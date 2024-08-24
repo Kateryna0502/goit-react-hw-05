@@ -5,7 +5,7 @@ axios.defaults.baseURL =
 const options = {
   headers: {
         Authorization:
-          "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZTNlZThkNmI0ZDUyOTE2NGRkODQwMjIyZTU4NjVlOSIsIm5iZiI6MTcyNDQxMTg4OC45OTcxLCJzdWIiOiI2NmM4NmUyMjM0MTkxNTk0MDNhMzNjMTMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.i7lWUoE9qXFOOhD4bnzlsdmlByhZAOjigE2ILO199LM",
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZTNlZThkNmI0ZDUyOTE2NGRkODQwMjIyZTU4NjVlOSIsIm5iZiI6MTcyNDQxMTg4OC45OTcxLCJzdWIiOiI2NmM4NmUyMjM0MTkxNTk0MDNhMzNjMTMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.i7lWUoE9qXFOOhD4bnzlsdmlByhZAOjigE2ILO199LM",
       
           
   },
@@ -59,4 +59,14 @@ export const fetchMovieReview = async (
     options,
   );
   return response.data.results;
+};
+
+export const fetchMovieByQuery = async (
+  query,
+) => {
+  const response = await axios.get(
+    `search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
+    options,
+  );
+  return response.data;
 };
