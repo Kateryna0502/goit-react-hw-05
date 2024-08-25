@@ -3,3 +3,11 @@
     font-size: 18px;
     color: rgb(108, 110, 106);
 }
+.list {
+    justify-content: start;
+    align-items: start;
+}
+.li {
+    justify-content: start;
+    
+}

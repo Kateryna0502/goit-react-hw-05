@@ -5,14 +5,14 @@ const MovieList = ({ movies }) => {
 
   return (
     <>
-      <ul>
+      <ul className={css.list}>
         {movies.map(({ id, title }) => {
           return (
-            <li key={id}>
+            <li className={css.li} key={id}>
               <Link state={{ from: location }} to={`/movies/${id}`}>
                 <h3 className={css.title}> {title}</h3>
               </Link>
-            </li>
+            </li >
           );
         })}
       </ul>

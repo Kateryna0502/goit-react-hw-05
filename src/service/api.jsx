@@ -32,21 +32,21 @@ export const fetchSearchMovie = async (
 };
 
 export const fetchMovieDetails = async (
-  id,
+  movieId,
 ) => {
   const response = await axios.get(
-    `movie/${id}`,
+    `movie/${movieId}`,
     options,
   );
   return response.data;
 };
 
 export const fetchMovieCredits = async (
-  id,
+  movieId,
 ) => {
   const response = await axios.get(
-      `movie/${id}/credits`,
-      
+      `movie/${movieId}/credits`,
+      options,
   );
   return response.data.cast;
 };
